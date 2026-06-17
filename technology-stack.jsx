@@ -90,8 +90,18 @@ function Plate({ layer, i, assembled, active }) {
 
 function TechStack() {
   const wrapRef = React.useRef(null);
-  const reduce = typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const [narrow, setNarrow] = React.useState(typeof window !== 'undefined' && window.innerWidth < 880);
+  const reduce = (typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches) || narrow;
   const [p, setP] = React.useState(reduce ? 1 : 0);
+
+  React.useEffect(() => {
+    const onResize = () => setNarrow(window.innerWidth < 880);
+    onResize();
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  React.useEffect(() => { if (reduce) setP(1); }, [reduce]);
 
   React.useEffect(() => {
     if (reduce) return;
@@ -125,7 +135,7 @@ function TechStack() {
   return (
     <section ref={wrapRef} className="hairline-top" style={{ position: 'relative', height: reduce ? 'auto' : '320vh' }}>
       <div style={{ position: reduce ? 'static' : 'sticky', top: 0, minHeight: reduce ? 0 : '100vh', display: 'flex', alignItems: 'center', padding: reduce ? '6.5rem 0' : '0', overflow: 'hidden' }}>
-        <div className="wrap" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(40px,6vw,88px)', alignItems: 'center', width: '100%' }}>
+        <div className="wrap r-split" style={{ gap: 'clamp(40px,6vw,88px)', alignItems: 'center', width: '100%' }}>
           {/* Left — narrative */}
           <div>
             <span className="rule" style={{ marginBottom: 22 }} />

@@ -29,7 +29,7 @@ function EbolaVignette() {
           <h2 style={{ fontSize: 'clamp(32px,4.4vw,52px)', fontWeight: 300, letterSpacing: '-0.025em', lineHeight: 1.05, margin: 0, maxWidth: 760 }}>The hour that mattered</h2>
           <p className="lead" style={{ maxWidth: 680, marginTop: 24, color: 'var(--text-secondary)' }}>2:00 AM, a university hospital ED. Marcus, 34, presents with fever and myalgias that began hours ago, six days after returning from a humanitarian mission in central Africa.</p>
         </Reveal>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(36px,5vw,72px)', marginTop: 56, alignItems: 'start' }}>
+        <div className="r-split" style={{ gap: 'clamp(36px,5vw,72px)', marginTop: 56, alignItems: 'start' }}>
           <Reveal>
             <div className="prose" style={{ maxWidth: 480 }}>
               <p style={{ marginTop: 0 }}>Ebola is undetectable by PCR for up to three days after symptom onset. Marcus has been symptomatic for hours. The specimen ships frozen as a Category A substance; the team is flying blind for days, and has no way to rule out a bacterial process that might need aggressive treatment of its own.</p>
@@ -88,7 +88,7 @@ function IbdVignette() {
           <h2 style={{ fontSize: 'clamp(32px,4.4vw,52px)', fontWeight: 300, letterSpacing: '-0.025em', lineHeight: 1.05, margin: 0, maxWidth: 760 }}>The space between flares</h2>
           <p className="lead" style={{ maxWidth: 680, marginTop: 24, color: 'var(--text-secondary)' }}>Maya is 23, finishing grad school and managing Crohn's. The frustrating part isn't the disease, it's the waiting. Every medication change is a stone dropped into a well, listening for a splash that might come in six weeks, or eight, or not at all.</p>
         </Reveal>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(36px,5vw,72px)', marginTop: 56, alignItems: 'center' }}>
+        <div className="r-split" style={{ gap: 'clamp(36px,5vw,72px)', marginTop: 56, alignItems: 'center' }}>
           <Reveal delay={120} style={{ order: 2 }}>
             <Card padding="lg" tone="page">
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 16 }}>

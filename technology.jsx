@@ -46,7 +46,7 @@ function Detection() {
         </Reveal>
 
         <Reveal delay={60}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 28, marginTop: 44, alignItems: 'center' }}>
+          <div className="r-3" style={{ gap: 28, marginTop: 44, alignItems: 'center' }}>
             <div>
               <div className="tabular" style={{ fontSize: 'clamp(30px,3vw,40px)', fontWeight: 300, letterSpacing: '-0.02em' }}>50–150 <span style={{ fontSize: '0.5em', color: 'var(--text-tertiary)' }}>nm</span></div>
               <div className="prose" style={{ fontSize: 13.5, marginTop: 8 }}>evanescent field reach</div>
@@ -100,7 +100,7 @@ function Multiplex() {
             <TECH_MultiplexMatrix />
           </TECH_Figure>
         </Reveal>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(180px,1fr))', gap: '36px 28px', marginTop: 48 }}>
+        <div className="r-4" style={{ gap: '36px 28px', marginTop: 48 }}>
           {specs.map((s, i) => (
             <Reveal key={i} delay={i * 70}>
               <div className="tabular" style={{ fontSize: 'clamp(38px,4vw,54px)', fontWeight: 300, letterSpacing: '-0.03em', lineHeight: 1 }}>{s[0]}</div>
@@ -138,7 +138,7 @@ function Attributes() {
     <section className="hairline-top" style={{ padding: '6.5rem 0' }}>
       <div className="wrap">
         <Reveal><SectionOpen num="04" eyebrow="Platform attributes" title="Each choice removes a barrier" sub="Every design decision dismantles a constraint that keeps cytokine testing locked inside centralized laboratories." /></Reveal>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: 20, marginTop: 52 }}>
+        <div className="r-cards" style={{ gap: 20, marginTop: 52 }}>
           {ATTRS.map((a, i) => (
             <Reveal key={a[0]} delay={(i % 3) * 80}>
               <Card padding="lg" style={{ height: '100%' }}>
@@ -151,7 +151,8 @@ function Attributes() {
         </div>
 
         <Reveal delay={80}>
-          <div style={{ marginTop: 56, border: '1px solid var(--border-default)', borderRadius: 'var(--radius-lg)', overflow: 'hidden' }}>
+          <div style={{ marginTop: 56, overflowX: 'auto', WebkitOverflowScrolling: 'touch' }}>
+          <div style={{ border: '1px solid var(--border-default)', borderRadius: 'var(--radius-lg)', overflow: 'hidden', minWidth: 560 }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.3fr 1.3fr', background: 'var(--surface-tint)', borderBottom: '1px solid var(--border-default)' }}>
               {['Specification', 'Biomarkr', 'Conventional lab cytokine testing'].map((h, i) => (
                 <div key={i} className="eyebrow" style={{ padding: '16px 22px', fontSize: 11, color: i === 1 ? 'var(--text-primary)' : 'var(--text-tertiary)' }}>{h}</div>
@@ -164,6 +165,7 @@ function Attributes() {
                 <div style={{ padding: '16px 22px', fontSize: 14, color: 'var(--text-tertiary)' }}>{r[2]}</div>
               </div>
             ))}
+          </div>
           </div>
         </Reveal>
       </div>
@@ -193,7 +195,7 @@ function CloudAI() {
       <div className="wrap">
         <Reveal><SectionOpen num="05" eyebrow="Cloud and AI infrastructure" title="The intelligence lives in software." sub="The reader captures raw optical signal and hands the heavy work to the cloud, where every measurement is processed, calibrated, quality-checked, and stored against the patient’s history. That is what turns Biomarkr from a testing device into a monitoring platform, the value is the trajectory analysis, not any single reading." /></Reveal>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: 16, marginTop: 52 }}>
+        <div className="r-4" style={{ gap: 16, marginTop: 52 }}>
           {PIPELINE.map((s, i) => (
             <Reveal key={i} delay={i * 70}>
               <Card padding="lg" tone="page" style={{ height: '100%', position: 'relative' }}>
@@ -209,7 +211,7 @@ function CloudAI() {
           <p className="prose" style={{ maxWidth: 720, marginTop: 40 }}>Because the intelligence lives in software, analytical performance improves continuously without recalling or modifying a single device. Calibration refinements, new QC rules, and better predictive models reach the entire install base through over-the-air updates.</p>
         </Reveal>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 20, marginTop: 36 }}>
+        <div className="r-4" style={{ gap: 20, marginTop: 36 }}>
           {AI_CARDS.map((c, i) => (
             <Reveal key={c[0]} delay={(i % 2) * 80}>
               <Card padding="lg" tone="page" style={{ height: '100%' }}>
@@ -249,7 +251,7 @@ function Validation() {
           <SectionOpen num="06" eyebrow="Validation and performance" title="Developed in part with BARDA DRIVe" sub="Under BARDA the platform demonstrated a validated 5-plex panel and strong agreement with established laboratory methods." />
           <div style={{ marginTop: 18 }}><Badge tone="positive" dot>Luminex equivalency confirmed</Badge></div>
         </Reveal>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: '40px 32px', marginTop: 52 }}>
+        <div className="r-4" style={{ gap: '40px 32px', marginTop: 52 }}>
           {specs.map((s, i) => (
             <Reveal key={i} delay={i * 70}>
               <div className="tabular" style={{ fontSize: 'clamp(34px,3.6vw,50px)', fontWeight: 300, letterSpacing: '-0.03em', lineHeight: 1 }}>{s[0]}</div>
