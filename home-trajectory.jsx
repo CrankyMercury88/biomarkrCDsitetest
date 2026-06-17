@@ -33,7 +33,7 @@ function SectionOpen({ num, eyebrow, title, sub, align = 'left', style = {} }) {
 function HeroTrajectory({ heroFace }) {
   return (
     <section style={{ position: 'relative', minHeight: '88vh', display: 'flex', alignItems: 'center', padding: '14vh 0 8vh' }}>
-      <div className="wrap" style={{ display: 'grid', gridTemplateColumns: 'minmax(320px,1fr) minmax(380px,1.05fr)', gap: 'clamp(40px,6vw,88px)', alignItems: 'center' }}>
+      <div className="wrap r-hero" style={{ gap: 'clamp(40px,6vw,88px)', alignItems: 'center' }}>
         <Reveal>
           <div className="eyebrow" style={{ marginBottom: 24 }}>Immune trajectory monitoring</div>
           <h1 style={{ margin: 0, fontFamily: heroFace === 'serif' ? 'var(--font-serif)' : 'var(--font-sans)', fontSize: 'clamp(40px,5.4vw,72px)', fontWeight: 300, letterSpacing: heroFace === 'serif' ? '-0.02em' : '-0.035em', lineHeight: 1.02 }}>
@@ -76,7 +76,7 @@ function HomeTrajectory() {
       <section className="hairline-top" style={sec}>
         <div className="wrap">
           <Reveal><SectionOpen num="01" eyebrow="The problem" title="Medicine is blind to immune trajectories." /></Reveal>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(40px,6vw,88px)', alignItems: 'start', marginTop: 48 }}>
+          <div className="r-split" style={{ gap: 'clamp(40px,6vw,88px)', alignItems: 'start', marginTop: 48 }}>
             <Reveal>
               <p className="lead" style={{ marginTop: 0 }}>Chronic inflammatory disease touches <strong>100 million Americans</strong> and costs more than <strong>$800 billion</strong> a year, yet it's managed with tools structurally mismatched to the biology.</p>
               <div className="prose" style={{ marginTop: 22 }}>
@@ -84,7 +84,7 @@ function HomeTrajectory() {
                 <p>This is an engineering problem, not a scientific one. The biology is understood. The measurement infrastructure does not exist.</p>
               </div>
             </Reveal>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1, background: 'var(--border-subtle)', border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md, 12px)', overflow: 'hidden' }}>
+            <div className="r-2" style={{ gap: 1, background: 'var(--border-subtle)', border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md, 12px)', overflow: 'hidden' }}>
               {ARPA_PROBLEMS.map((p, i) =>
               <Reveal key={p.label} delay={i * 80} style={{ background: 'var(--surface-page)', padding: '22px 22px' }}>
                   <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--signal-critical)', marginBottom: 10 }}>{p.label}</div>
@@ -99,7 +99,7 @@ function HomeTrajectory() {
       {/* 02 — From snapshot to trajectory */}
       <section className="hairline-top" style={sec}>
         <div className="wrap">
-          <div style={{ display: 'grid', gridTemplateColumns: t.showDevice ? 'minmax(320px,1fr) minmax(280px,0.8fr)' : '1fr', gap: 'clamp(40px,6vw,80px)', alignItems: 'center' }}>
+          <div className={t.showDevice ? 'r-split' : ''} style={{ gap: 'clamp(40px,6vw,80px)', alignItems: 'center' }}>
             <Reveal><SectionOpen num="02" eyebrow="The platform" title="Biomarkr turns a snapshot into a trajectory." sub="A handheld silicon photonic biosensor — 22 issued patents, no moving parts — that runs a quantitative five-cytokine immunoassay from a 10 µL fingerstick in under ten minutes. The cytokine equivalent of continuous glucose monitoring." /></Reveal>
             {t.showDevice &&
             <Reveal delay={120}>
@@ -119,7 +119,7 @@ function HomeTrajectory() {
       <section className="hairline-top" style={sec}>
         <div className="wrap">
           <Reveal><SectionOpen num="03" eyebrow="The signal" title="Disease lives in the pattern, not the number." sub="The five cytokines span four immune axes — innate initiation, systemic amplification, adaptive effector function, and counter-regulation. Each condition writes a characteristic signature in how those markers move together over time." /></Reveal>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: 24, marginTop: 52 }}>
+          <div className="r-3" style={{ gap: 24, marginTop: 52 }}>
             {['sepsis', 'ra', 'longcovid'].map((k, i) =>
             <Reveal key={k} delay={i * 110}><ARPA_SignatureCard sig={ARPA_SIGNATURES[k]} prefix={'sigA-' + k} fill={t.chartFill} /></Reveal>
             )}

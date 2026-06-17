@@ -48,9 +48,9 @@ function FaqGroup({ group, items }) {
   const [open, setOpen] = React.useState(null);
   return (
     <section className="hairline-top" style={{ padding: 'clamp(48px,6vh,72px) 0' }}>
-      <div className="wrap" style={{ display: 'grid', gridTemplateColumns: '0.6fr 1.4fr', gap: 'clamp(24px,4vw,64px)', alignItems: 'start' }}>
+      <div className="wrap r-faq" style={{ gap: 'clamp(24px,4vw,64px)', alignItems: 'start' }}>
         <Reveal>
-          <h2 className="bm-title" style={{ position: 'sticky', top: 110, fontSize: 24, fontWeight: 300, letterSpacing: '-0.02em', margin: 0 }}>{group}</h2>
+          <h2 className="bm-title faq-sticky" style={{ position: 'sticky', top: 110, fontSize: 24, fontWeight: 300, letterSpacing: '-0.02em', margin: 0 }}>{group}</h2>
         </Reveal>
         <Reveal delay={80}>
           <div>

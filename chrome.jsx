@@ -18,7 +18,6 @@ const NAV = [
   { key: 'technology', label: 'Technology', href: 'technology.html' },
   { key: 'inflammation', label: 'Why inflammation', href: 'inflammation.html' },
   { key: 'practice', label: 'Use cases', href: 'practice.html' },
-  { key: 'notes', label: "Founder's notes", href: 'notes.html' },
 ];
 
 /* ---------- Theme hook (persisted, no flash) ---------- */
@@ -121,7 +120,7 @@ function SiteHeader({ active }) {
 function SiteFooter() {
   const cols = [
     { h: 'Explore', items: [['Technology', 'technology.html'], ['Why inflammation', 'inflammation.html'], ['Use cases', 'practice.html'], ['Cytokine model', 'cytokine.html']] },
-    { h: 'Company', items: [["Founder's notes", 'notes.html'], ['FAQ', 'faq.html'], ['Contact', 'mailto:dylan@biomarkr.health']] },
+    { h: 'Company', items: [['FAQ', 'faq.html'], ['Contact', 'mailto:dylan@biomarkr.health']] },
     { h: 'Contact', items: [['dylan@biomarkr.health', 'mailto:dylan@biomarkr.health'], ['Thousand Oaks, California', '#'], ['LinkedIn', '#']] },
   ];
   return (
@@ -170,7 +169,7 @@ function PageHero({ eyebrow, title, lead, children }) {
 function CTABand({ title, body, primary, primaryHref, secondary, secondaryHref }) {
   return (
     <section style={{ background: 'var(--surface-inverse)', color: 'var(--text-inverse)', padding: 'clamp(64px,9vh,104px) 8%' }}>
-      <div style={{ maxWidth: 1240, margin: '0 auto', display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: 48, alignItems: 'center' }}>
+      <div className="r-cta" style={{ maxWidth: 1240, margin: '0 auto', gap: 48, alignItems: 'center' }}>
         <div>
           <span className="rule" style={{ background: 'var(--white)', marginBottom: 22 }} />
           <h2 style={{ margin: 0, fontSize: 'clamp(30px,4vw,48px)', fontWeight: 300, letterSpacing: '-0.025em', lineHeight: 1.1, color: 'var(--white)' }}>{title}</h2>

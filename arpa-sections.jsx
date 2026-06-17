@@ -230,7 +230,7 @@ function SignatureCard({ sig, prefix, fill = false }) {
 function CircadianBlock() {
   const { Card } = window.BiomarkrDesignSystem_734cca;
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: '1.3fr 1fr', gap: 'clamp(32px,5vw,64px)', alignItems: 'center' }}>
+    <div className="r-wide" style={{ gap: 'clamp(32px,5vw,64px)', alignItems: 'center' }}>
       <Card padding="lg" style={{ background: 'var(--surface-page)' }}>
         <div className="eyebrow" style={{ fontSize: 10.5, marginBottom: 12 }}>24-hour cycle · wake-normalized</div>
         <LineChart width={560} height={260} series={CIRCADIAN.series} xTicks={CIRCADIAN.xTicks} xLabel={CIRCADIAN.xLabel} yMax={CIRCADIAN.yMax} yMin={CIRCADIAN.yMin} yTicks={CIRCADIAN.yTicks} prefix="circ" />
@@ -240,7 +240,7 @@ function CircadianBlock() {
       <div>
         <p className="prose" style={{ marginTop: 0 }}>IL-6, TNF-α, and IL-1β swing <strong>2–4× within a single day</strong>, peaking before dawn, bottoming out in the afternoon. A morning 8 pg/mL and an afternoon 4 pg/mL can mean the same immune state, or opposite ones.</p>
         <p className="prose">Biomarkr runs a dedicated <strong>circadian characterization phase</strong>: test every four hours for 14 days, normalized to wake time. Every later reading is phase-corrected against that personal map.</p>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '28px 28px', marginTop: 28 }}>
+        <div className="r-2" style={{ gap: '28px 28px', marginTop: 28 }}>
           <div>
             <div className="tabular" style={{ fontSize: 'clamp(34px,3.4vw,46px)', fontWeight: 300, letterSpacing: '-0.03em', lineHeight: 1 }}>40%</div>
             <div className="prose" style={{ marginTop: 8, fontSize: 13.5 }}>of apparent “deviations” are circadian noise without correction</div>
@@ -259,7 +259,7 @@ function CircadianBlock() {
 function UseCaseGrid() {
   const { Card } = window.BiomarkrDesignSystem_734cca;
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: 24 }}>
+    <div className="r-cards" style={{ gap: 24 }}>
       {USE_CASES.map((u, i) => (
         <Reveal key={u.title} delay={(i % 3) * 90}>
           <Card padding="lg" style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
@@ -282,7 +282,7 @@ function UseCaseGrid() {
 /* Three capabilities row (section 2). */
 function CapabilityRow() {
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 'clamp(28px,4vw,52px)' }}>
+    <div className="r-3" style={{ gap: 'clamp(28px,4vw,52px)' }}>
       {CAPABILITIES.map((c, i) => (
         <Reveal key={c.n} delay={i * 90}>
           <div style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--text-tertiary)', letterSpacing: '0.1em', marginBottom: 16 }}>{c.n}</div>
@@ -297,7 +297,7 @@ function CapabilityRow() {
 /* Spec strip (section 2). */
 function SpecRow() {
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(180px,1fr))', gap: '36px 28px' }}>
+    <div className="r-4" style={{ gap: '36px 28px' }}>
       {SPECS.map((s, i) => (
         <Reveal key={s[1]} delay={i * 70}>
           <div className="tabular" style={{ fontSize: 'clamp(38px,4vw,56px)', fontWeight: 300, letterSpacing: '-0.03em', lineHeight: 1 }}>{s[0]}</div>

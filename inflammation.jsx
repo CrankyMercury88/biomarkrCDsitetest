@@ -10,7 +10,7 @@ const { Card, Badge } = window.BiomarkrDesignSystem_734cca;
 function PullStat() {
   return (
     <section className="hairline-top" style={{ padding: 'clamp(64px,9vh,110px) 0' }}>
-      <div className="wrap" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(40px,6vw,80px)', alignItems: 'center' }}>
+      <div className="wrap r-split" style={{ gap: 'clamp(40px,6vw,80px)', alignItems: 'center' }}>
         <Reveal>
           <div className="tabular" style={{ fontSize: 'clamp(96px,15vw,200px)', fontWeight: 200, letterSpacing: '-0.04em', lineHeight: 0.86 }}>3<span style={{ color: 'var(--text-tertiary)' }}>/</span>5</div>
         </Reveal>
@@ -49,7 +49,7 @@ const CGM_LINES = [
 function FrequencyMatters() {
   return (
     <section className="hairline-top" style={{ padding: '6.5rem 0' }}>
-      <div className="wrap" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(40px,6vw,80px)', alignItems: 'center' }}>
+      <div className="wrap r-split" style={{ gap: 'clamp(40px,6vw,80px)', alignItems: 'center' }}>
         <Reveal delay={120} style={{ order: 2 }}>
           <Card padding="lg">
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 8 }}>
@@ -98,7 +98,7 @@ function Conditions() {
           <div className="eyebrow" style={{ marginBottom: 14 }}>Where it matters</div>
           <h2 style={{ margin: 0, fontSize: 'clamp(30px,4vw,46px)', fontWeight: 300, letterSpacing: '-0.025em', color: 'var(--white)', maxWidth: 760, lineHeight: 1.1 }}>The same five cytokines, across the diseases that define chronic illness.</h2>
         </Reveal>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 24, marginTop: 56 }}>
+        <div className="r-cards" style={{ gap: 24, marginTop: 56 }}>
           {CONDITIONS.map((c, i) => (
             <Reveal key={c[0]} delay={i * 60}>
               <div style={{ borderTop: '1px solid var(--paper-a12)', paddingTop: 22, height: '100%' }}>
